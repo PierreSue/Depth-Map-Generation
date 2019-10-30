@@ -29,7 +29,7 @@ After histogram equalization, we employ median blur to reduce trivial details an
 An end-to-End Learning of GC-net (Geometry and Context Network). We create an end-to-end network with a pair of stereo images as input and eventually a disparity map as output.
 
 ### Model architecture
-* <br>Unary Features(2D Convolution)<br /> We learn a deep representation used to learn features to form cost volume instead of computing raw datas per pixels.
+* Unary Features(2D Convolution)<br><br /> We learn a deep representation used to learn features to form cost volume instead of computing raw datas per pixels.
 
 * Cost Volume
 We concatenate left features and right features to form a cost volume.
