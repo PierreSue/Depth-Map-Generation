@@ -30,6 +30,7 @@ An end-to-End Learning of GC-net (Geometry and Context Network). We create an en
 
 ### Model architecture
 * Unary Features(2D Convolution)
+
 We learn a deep representation used to learn features to form cost volume instead of computing raw datas per pixels.
 
 * Cost Volume
