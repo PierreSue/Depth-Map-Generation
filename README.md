@@ -29,18 +29,19 @@ After histogram equalization, we employ median blur to reduce trivial details an
 An end-to-End Learning of GC-net (Geometry and Context Network). We create an end-to-end network with a pair of stereo images as input and eventually a disparity map as output.
 
 ### Model architecture
-* Unary Features(2D Convolution)<br /> We learn a deep representation used to learn features to form cost volume instead of computing raw datas per pixels.
+* Unary Features(2D Convolution)<br /> 
+We learn a deep representation used to learn features to form cost volume instead of computing raw datas per pixels.
 
-* Cost Volume
+* Cost Volume<br /> 
 We concatenate left features and right features to form a cost volume.
 
-* Learning Context
+* Learning Context<br /> 
 We want to learn a regularization function which is able to consider cost volume and refine our disparity result. 3D convolutions can be used to learn features from three dimensions: height, width and disparity. Then we employ a 3D transposed convolution to up-sample the volume in the decoder and produce a final cost volume.
 
-* Differentiable ArgMin
+* Differentiable ArgMin<br /> 
 We then perform an argmin to get estimated disparities.
 
-* Dataset
+* Dataset<br /> 
 FlyingThings3D (22389 training data)
 
 ## Post-processing
