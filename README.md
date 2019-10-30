@@ -24,6 +24,30 @@ We observed that the given right and left image have different brightness. In co
 
 After histogram equalization, we employ median blur to reduce trivial details and use guided filter to sharpen edges based on input images to keep contours.
 
+## Model
+
+An end-to-End Learning of GC-net (Geometry and Context Network). We create an end-to-end network with a pair of stereo images as input and eventually a disparity map as output.
+
+### Model architecture
+* Unary Features(2D Convolution)
+We learn a deep representation used to learn features to form cost volume instead of computing raw datas per pixels.
+
+* Cost Volume
+We concatenate left features and right features to form a cost volume.
+
+* Learning Context
+We want to learn a regularization function which is able to consider cost volume and refine our disparity result. 3D convolutions can be used to learn features from three dimensions: height, width and disparity. Then we employ a 3D transposed convolution to up-sample the volume in the decoder and produce a final cost volume.
+
+* Differentiable ArgMin
+We then perform an argmin to get estimated disparities.
+
+* Dataset
+FlyingThings3D (22389 training data)
+
+## Post-processing
+* Joint Bilateral filter
+* GaussianBlur
+
 ## Reference
 
 * End-to-End Learning of Geometry and Context for Deep Stereo Regression. Alex Kendall Hayk Martirosyan Saumitro Dasgupta Peter Henry Ryan Kennedy Abraham Bachrach Adam Bry Skydio Inc ICCV2017.
